@@ -332,29 +332,29 @@ def newUserWrite():
 def newUserRead():
     fpath = "D:\\QQMusicResult\\songsresult.txt"
     text = open(fpath,'r',encoding ='utf8').read()
-    bg_pic = imread('jay.jpg')
+   # bg_pic = imread('jay.jpg')
     wc = WordCloud(background_color='white',  # 背景颜色
                    max_words=500,  # 最大词数
-                   mask=bg_pic,  # 以该参数值作图绘制词云，这个参数不为空时，width和height会被忽略
+                  # mask=bg_pic,  # 以该参数值作图绘制词云，这个参数不为空时，width和height会被忽略
                    max_font_size=100,  # 显示字体的最大值
                    font_path="C:/Windows/Fonts/STFANGSO.ttf",  # 解决显示口字型乱码问题，可进入C:/Windows/Fonts/目录更换字体
                    random_state=42,  # 为每个词返回一个PIL颜色
-                   # width=1000,  # 图片的宽
-                   # height=860  #图片的长
+                    width=1600,  # 图片的宽
+                    height=900  #图片的长
                    )
 
     # 显示词云图片
 
     wc.generate(text)
     # 基于彩色图像生成相应彩色
-    image_colors = ImageColorGenerator(bg_pic)
+   # image_colors = ImageColorGenerator(bg_pic)
     # 显示图片
     plt.imshow(wc)
     # 关闭坐标轴
     plt.axis('off')
     # 绘制词云
     plt.figure()
-    plt.imshow(wc.recolor(color_func=image_colors))
+  #  plt.imshow(wc.recolor(color_func=image_colors))
     plt.axis('off')
     # 保存图片
     wc.to_file('biggerUser.png')
