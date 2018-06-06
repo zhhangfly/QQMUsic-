@@ -304,14 +304,13 @@ def getRecommandByCluster():
             labellist.append(l)#此时labellist储存了同簇元素下标
     songsInner = outputList.get(bigUserList[num])
     setListInner = set(songsInner.keys())
-    print('推荐的歌曲为：')
-    print(len(labellist))
     for t in range(0,len(labellist)):
         songs = outputList.get(bigUserList[t])
         setsongs = set(songs.keys())
         for ele in setsongs:
             setresults.add(ele)
-    print(len(setresults))
+    print('推荐的歌曲数目为'+str(len(setresults)))
+    print('推荐的歌曲为：')
     for ele in setresults:
         if ele not in setListInner:
             print(str(ele))
@@ -375,4 +374,4 @@ def newUserRead():
 
 
 if __name__ == "__main__":
-    newUserRead()
+    getRecommandByCluster()
