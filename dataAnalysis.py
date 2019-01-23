@@ -322,13 +322,14 @@ def newUserWrite():
     for user in bigUserList:
         songs = outputList.get(user).keys()
         for song in songs:
-            songsList.append(song)
+            songsList.append(song.replace(' ','' ))
     with open(fpath,'a',encoding='utf-8') as f:
         for out in songsList:
             f.write(str(out)+' ')
 
 
 def newUserRead():
+    stop=['with杨瑞代','with']
     fpath = "D:\\QQMusicResult\\songsresult.txt"
     text = open(fpath,'r',encoding ='utf8').read()
    # bg_pic = imread('jay.jpg')
@@ -338,12 +339,12 @@ def newUserRead():
                    max_font_size=100,  # 显示字体的最大值
                    font_path="C:/Windows/Fonts/STFANGSO.ttf",  # 解决显示口字型乱码问题，可进入C:/Windows/Fonts/目录更换字体
                    random_state=42,  # 为每个词返回一个PIL颜色
+                   stopwords=stop,
                     width=1600,  # 图片的宽
                     height=900  #图片的长
                    )
 
     # 显示词云图片
-
     wc.generate(text)
     # 基于彩色图像生成相应彩色
    # image_colors = ImageColorGenerator(bg_pic)
@@ -374,4 +375,4 @@ def newUserRead():
 
 
 if __name__ == "__main__":
-    getRecommandByCluster()
+    newUserRead()
