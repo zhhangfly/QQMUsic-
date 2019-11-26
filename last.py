@@ -144,7 +144,7 @@ def getSongDetail(songmid):
         'callback': 'etOneSongInfoCallback',
         'g_tk': '550934167',
         'jsonpCallback': 'getOneSongInfoCallback',
-        'loginUin': '331161787',
+        'loginUin': '', # 你的QQ数目
         'hostUin': '0',
         'format':'jsonp',
         'inCharset': 'utf8',
