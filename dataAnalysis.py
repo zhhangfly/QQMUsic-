@@ -206,7 +206,7 @@ def getRecommandByGeners():
     print(userGenerNumDict)
     rawdata = DataFrame(userGenerNumDict)
     data = rawdata.T#转置
-    #data.to_excel('C:/Users/张博/Desktop/数据挖掘.xlsx',sheet_name='data')
+    #data.to_excel('C:/Users/Desktop/数据挖掘.xlsx',sheet_name='data')
     num = int(input('输入你的下标:'))
     user = np.array(data.iloc[num].values)
     for index in data.index:
